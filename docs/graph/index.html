@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Graph - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Graph";
+    var mkdocs_page_input_path = "graph.md";
+    var mkdocs_page_url = "/graph/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="index.html">Graph</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simweather/index.html">SimWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteostats/index.html">MeteoStats</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../crop/index.html">Crop</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../soilwater/index.html">SoilWater</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pysawit/index.html">PySawit</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Utilities &raquo;</li>
+        
+      
+    
+    <li>Graph</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="graph">graph <em>module</em></h1>
+
+<p>Graphing the program flow module.</p>
+<p>This module aids in understanding the flow of program by creating a visual map (network graph or
+map) of the program flow path. The graph map is in DOT and GML (XML) types.</p>
+<div class="admonition warning">
+<p class="admonition-title">Required installation</p>
+<ul>
+<li>pycallgraph (run <code>pip install pycallgraph</code>)</li>
+<li><a href="http://www.graphviz.org">Graphviz</a> visualization software</li>
+</ul>
+</div>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="graph.Graph">Graph <em>class</em></h2>
+
+<p>Graph class.</p>
+<p>Creates a network map by showing/tracing the program flow. DOT and GML (XML) files will be
+created to show the flow. Use a dedicated Graph Editor like <a href="http://www.yworks.com/products/yed">yEd</a> to view the network map.</p>
+<p>Inherits the <code>pycallgraph.output.GraphvizOutput</code> class to modify certain default
+output/behavior. Override the following base methods</p>
+<pre><code class="text">    prepare_graph_attributes
+    node
+    edge
+    done
+    update
+</code></pre>
+
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>trace</code>: traces the program flow and creates (.dot) DOT and (.gml) GML files</li>
+</ul>
+<h3 id="graph.Graph.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">Graph(self, **kwargs)
+</code></pre>
+
+<p>Create and initialize the Graph object.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>kwargs (dict)</strong>: change any attributes or initialize new attributes with
+                   this dictionary</li>
+</ul>
+<h3 id="graph.Graph.prepare_graph_attributes">prepare_graph_attributes</h3>
+
+<pre><code class="python">Graph.prepare_graph_attributes(self)
+</code></pre>
+
+<p>Override to change the default attributes for graph, nodes, and edges.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="graph.Graph.node">node</h3>
+
+<pre><code class="python">Graph.node(self, key, attr)
+</code></pre>
+
+<p>Override to delete newlines and number and length of function calls in node labels.</p>
+<p><strong>Returns</strong></p>
+<p><code>str</code>: node label</p>
+<h3 id="graph.Graph.edge">edge</h3>
+
+<pre><code class="python">Graph.edge(self, edge, attr)
+</code></pre>
+
+<p>Override to delete edge labels.</p>
+<p><strong>Returns</strong></p>
+<p><code>str</code>: edge label</p>
+<h3 id="graph.Graph.done">done</h3>
+
+<pre><code class="python">Graph.done(self)
+</code></pre>
+
+<p>Override to avoid creating the graph picture file.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="graph.Graph.update">update</h3>
+
+<pre><code class="python">Graph.update(self)
+</code></pre>
+
+<p>Override to avoid warning message to implement all abstract methods.</p>
+<p>Does nothing.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="graph.Graph.trace">trace</h3>
+
+<pre><code class="python">Graph.trace(self, fn, fname, exclude_from_trace=None, strings_to_delete=None, class_colors=None)
+</code></pre>
+
+<p>Trace the program flow and creates DOT (<em>.dot) and GML (</em>.gml) files.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>fn (object)</strong>: function to call for the entry point to trace the program flow</li>
+<li><strong>fname (str)</strong>: filename for graph files (do not supply file extension)</li>
+<li><strong>exclude_from_trace (list)</strong>: names (<code>str</code>) to exclude from trace (<code>None</code> by default)</li>
+<li><strong>strings_to_delete (list)</strong>: text (<code>str</code>) to remove from graph files (<code>None</code> by default)</li>
+<li><strong>class_colors (dict)</strong>: node colors (<code>None</code> by default)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../annualweather/index.html" class="btn btn-neutral float-right" title="AnnualWeather">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../utils/index.html" class="btn btn-neutral" title="Utils"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../utils/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../annualweather/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

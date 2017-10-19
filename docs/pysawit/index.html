@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>PySawit - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "PySawit";
+    var mkdocs_page_input_path = "pysawit.md";
+    var mkdocs_page_url = "/pysawit/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/index.html">Graph</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simweather/index.html">SimWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteostats/index.html">MeteoStats</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../crop/index.html">Crop</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../soilwater/index.html">SoilWater</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="index.html">PySawit</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Front-end &raquo;</li>
+        
+      
+    
+    <li>PySawit</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="pysawit">pysawit <em>module</em></h1>
+
+<p>PySawit: Oil palm growth and yield model.</p>
+<p>This program can run in three modes:</p>
+<pre><code class="text">    1. Run model simulations (daily and hourly run)
+    2. Output weather/meteorology statistics
+    3. Create visualization network graph files
+</code></pre>
+
+<p><strong>OPTION (1a) - DAILY MODEL RUN</strong></p>
+<p>Usage (for daily model simulations):</p>
+<pre><code class="text">    pysawit.py run -i &lt;input file&gt;
+                   -o &lt;output file&gt;
+                   -n &lt;duration&gt;
+                   -e &lt;Excel workbook name&gt; (optional)
+                   -m &lt;macro name and arguments&gt; (optional)
+</code></pre>
+
+<p>where flags:</p>
+<pre><code class="text">    run is to specify either a daily or hourly model run
+    -i is the path and filename to the model input (initialization) file
+    -o is the path and filename of the model output (results) file
+    -n is the number of simulation days
+    -e (optional) is the full path name of an Excel workbook
+    -m (optional) is the name of the VBA macro in the Excel workbook to run.
+       If the flag -e is specified, this flag -m must be specified too.
+       If the macro contains one or more arguments, they must be specified after
+       the macro name, where each argument is separated by a space.
+</code></pre>
+
+<p><strong>Example</strong></p>
+<p>On the commandline, you will type the following in only one line</p>
+<pre><code class="text">    pysawit.py run -i &quot;C:\Users\adminuser\input.txt&quot;
+                   -o &quot;C:\Users\adminuser\output.txt&quot;
+                   -n 3650
+                   -e &quot;C:\Users\adminuser\export.xlsm&quot;
+                   -m ImportResults A1 3650
+</code></pre>
+
+<p>where</p>
+<pre><code class="text">    1) &quot;input.txt&quot; is the model input file and &quot;output.txt&quot; is the model output
+       file. Both of these files are in the &quot;C:\Users\adminuser\&quot; folder.
+    2) The model will run for 10 years (n = 10 x 365 = 3650 days).
+    3) Upon model completion, the model results will be exported to &quot;export.xlsm&quot;
+       Excel workbook.
+    4) &quot;ImportResults&quot; is the name of the macro in &quot;export.xlsm&quot; that will
+       triggered to run, such as to import the model results, and &quot;A1&quot; and &quot;3650&quot;
+       will be passed into the macro as its arguments.
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the flag <code>-e</code> is not specified, no export to Excel will be carried out, even if
+the flag <code>-m</code> is specified.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Excel export function works only in the Windows operating system.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File paths must be enclosed with double quotes, particularly if the file paths contain spaces.</p>
+</div>
+<p><strong>OPTION (1b) - HOURLY MODEL RUN</strong></p>
+<p>Usage (for hourly model simulations):</p>
+<pre><code class="text">    pysawit.py run -i &lt;input file&gt;
+                   -o &lt;output file&gt;
+                   -e &lt;Excel workbook name&gt; (optional)
+                   -m &lt;macro name and arguments&gt; (optional)
+</code></pre>
+
+<p>where flags</p>
+<pre><code class="text">    run is to specify daily or hourly model run
+    -i is the path and filename to the model input (initialization) file
+    -o is the path and filename of the model output (results) file
+    -e (optional) is the full path name of an Excel workbook
+    -m (optional) is the name of the VBA macro in the Excel workbook to run.
+       If the flag -e is specified, this flag -m must be specified too.
+       If the macro contains one or more arguments, they must be specified after
+       the macro name, where each argument is separated by a space.
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running the hourly model simulation is exactly the same as running for the daily model
+simulations, except without the duration flag <code>-n</code>. If the <code>-n</code> flag is specified,
+daily model run will be assumed. Removing the <code>-n</code> flag runs the hourly model simulations.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hourly model simuations is always at one hour time increment from hour 0 to 24.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File paths must be enclosed with double quotes, particularly if the file paths contain spaces.</p>
+</div>
+<p><strong>OPTION (2) - WEATHER STATISTICS</strong></p>
+<p>Usage (for weather/meteorology statistics):</p>
+<pre><code class="text">    pysawit.py met -i &lt;input file&gt;
+                   -o &lt;weather file&gt;
+                   -a
+                   -e &lt;Excel workbook name&gt; (optional)
+                   -m &lt;macro name and arguments&gt; (optional)
+</code></pre>
+
+<p>where flags</p>
+<pre><code class="text">    met is to specify weather/meteorology statistics
+    -i is the path and filename to the model input (initialization) file
+    -o is the path and filename of the weather file
+    -a (optional) means to append the weather stats to the existing weather
+       file. If the weather file does not exist, a new one will be created.
+       Omit the -a flag to create a new file or to overwrite the existing file.
+    -e (optional) is the full path name of an Excel workbook
+    -m (optional) is the name of the VBA macro in the Excel workbook to run.
+       If the flag -e is specified, this flag -m must be specified too.
+       If the macro contains one or more arguments, they must be specified
+       after the macro name, where each argument is separated by a space.
+</code></pre>
+
+<p><strong>Example</strong></p>
+<p>On the commandline, you will type the following in only one line</p>
+<pre><code class="text">    pysawit.py met -i &quot;C:\Users\adminuser\input.txt&quot;
+                   -w &quot;C:\Users\adminuser\wthr-stats.txt&quot;
+</code></pre>
+
+<p>where</p>
+<pre><code class="text">    1) &quot;input.txt&quot; is the model input file
+    2) &quot;wthr-stats.txt&quot; is the weather file. This is the file in which the
+       weather statistics will be written.
+    3) Since the -a flag is not specified, the weather file will be created.
+       If the 'wthr-stats.txt' file already exists, it will be overwritten
+       without notice.
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both of the input and weather files are in the <code>"C:\Users\adminuser\"</code> folder.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File paths must be enclosed with double quotes, particularly if the file paths contain spaces.</p>
+</div>
+<p><strong>OPTION (3) - NETWORK GRAPH</strong></p>
+<p>Usage (for creating visualization graph files):</p>
+<pre><code class="text">    pysawit.py net -i &lt;input file&gt;
+                   -o &lt;visualization graph file&gt;
+                   -e &lt;Excel workbook name&gt; (optional)
+                   -m &lt;macro name and arguments&gt; (optional)
+</code></pre>
+
+<p>where flags</p>
+<pre><code class="text">    net is to specify the creation of network graphs to depict program flow
+    -i is the path and filename to the model input (initialization) file
+    -o is the path and filename of the visualization graph files (DO NOT specify
+       the file extension)
+    -e (optional) is the full path name of an Excel workbook
+    -m (optional) is the name of the VBA macro in the Excel workbook to run.
+       If the flag -e is specified, this flag -m must be specified too.
+       If the macro contains one or more arguments, they must be specified after
+       the macro name, where each argument is separated by a space.
+</code></pre>
+
+<p><strong>Example</strong></p>
+<p>On the commandline, you will type the following in only one line</p>
+<pre><code class="text">    pysawit.py net -i &quot;C:\Users\adminuser\input.txt&quot;
+                   -o &quot;C:\Users\adminuser\network&quot;
+</code></pre>
+
+<p>where</p>
+<pre><code class="text">    1) &quot;input.txt&quot; is the model input file
+    2) &quot;network&quot; is the network file name (without extension). Upon completion,
+       two network graph files will be created: a DOT (file extension .dot) and
+       a GML (file extension .gml) file. In this case, two files 'network.dot'
+       and 'network.gml' will be created.
+</code></pre>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT supply file extensions for network file name. If you do, ".dot" and ".gml" will
+be appended to the provided file extension.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both of the input and network files are in the <code>"C:\Users\adminuser\"</code> folder.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File paths must be enclosed with double quotes, particularly if the file paths contain spaces.</p>
+</div>
+<p><strong>SUMMARY</strong></p>
+<p>General commandline options:</p>
+<pre><code class="text">    pysawit.py {run|met|net} [-h]
+</code></pre>
+
+<p><code>run</code> mode:</p>
+<pre><code class="text">    pysawit.py run -i -o [-n] [-e -m[...]] [-h]
+</code></pre>
+
+<p><code>met</code> mode:</p>
+<pre><code class="text">    pysawit.py met -i -o [-a] [-e -m[...]] [-h]
+</code></pre>
+
+<p><code>net</code> mode:</p>
+<pre><code class="text">    pysawit.py net -i -o [-e -m[...]] [-h]
+</code></pre>
+
+<ul>
+<li>Flags <code>-i</code> and <code>-o</code> are required for all modes.</li>
+<li>Flags <code>-e</code> and <code>-m</code> are optional but if specified, they must be specified together.</li>
+</ul>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="pysawit.printmsg">printmsg <em>function</em></h2>
+
+<pre><code class="python">printmsg(msg, printtrace=False, wait=False)
+</code></pre>
+
+<p>Print a list of messages then, if needed, wait for keypress to resume (usually to exit).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>msg (list)</strong>: list of messages (<code>str</code>) to print to screen</li>
+<li><strong>printtrace (bool)</strong>: <code>True</code> to print error messages to error log file,
+                       else <code>False</code> to suppress</li>
+<li><strong>wait (bool)</strong>: <code>True</code> to wait for Enter key press before exiting, else
+                 <code>False</code> to exit immediately</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h2 id="pysawit.main">main <em>function</em></h2>
+
+<pre><code class="python">main()
+</code></pre>
+
+<p>Main entry point for the program.</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: Error codes</p>
+<pre><code class="text">    0 = no error
+    1 = error during model operation (e.g., simulation run) (exception errors)
+    2 = error in commandline flags/options
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../facade/index.html" class="btn btn-neutral" title="Facade"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../facade/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

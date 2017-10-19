@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>SoilWater - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SoilWater";
+    var mkdocs_page_input_path = "soilwater.md";
+    var mkdocs_page_url = "/soilwater/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/index.html">Graph</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simweather/index.html">SimWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteostats/index.html">MeteoStats</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../crop/index.html">Crop</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">SoilWater</a>
+    <ul class="subnav">
+            
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pysawit/index.html">PySawit</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SoilWater</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="soilwater">soilwater <em>module</em></h1>
+
+<p>Soil water movement and content module.</p>
+<p>Model one-dimensional soil water movement (fluxes).
+Includes groundwater (assumes constant water table depth).</p>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="soilwater.SWC">SWC <em>namedtuple</em></h2>
+
+<p><code>SWC(sat, fc, pwp, psd, porosity, airentry)</code></p>
+<p>namedtuple: Soil water characteristics
+<h3 id="soilwater.SWC.sat">sat</h3></p>
+<p>float: saturation point
+<h3 id="soilwater.SWC.fc">fc</h3></p>
+<p>float: field capacity
+<h3 id="soilwater.SWC.pwp">pwp</h3></p>
+<p>float: permanent wilting point
+<h3 id="soilwater.SWC.psd">psd</h3></p>
+<p>float: pore-size distribution
+<h3 id="soilwater.SWC.porosity">porosity</h3></p>
+<p>float: soil porosity
+<h3 id="soilwater.SWC.airentry">airentry</h3></p>
+<p>float: air-entry value
+<h2 id="soilwater.Texture">Texture <em>namedtuple</em></h2></p>
+<p><code>Texture(clay, sand, om)</code></p>
+<p>namedtuple: Soil texture
+<h3 id="soilwater.Texture.clay">clay</h3></p>
+<p>float: percentage of clay
+<h3 id="soilwater.Texture.sand">sand</h3></p>
+<p>float: percentage of sand
+<h3 id="soilwater.Texture.om">om</h3></p>
+<p>float: percentage of organic matter
+<h2 id="soilwater.AET">AET <em>namedtuple</em></h2></p>
+<p><code>AET(crop, soil)</code></p>
+<p>namedtuple: Actual or reduction to evapotranspiration (ET)
+<h3 id="soilwater.AET.crop">crop</h3></p>
+<p>float: actual crop transpiration (or reduction of crop potential transpiration)
+<h3 id="soilwater.AET.soil">soil</h3></p>
+<p>float: actual soil evaporation (or reduction of soil potential evaporation)
+<h2 id="soilwater.RootWater">RootWater <em>class</em></h2></p>
+<p>Soil water characteristics in the rooting zone.</p>
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>wc (float)</code>: water content (mm)</li>
+<li><code>vwc (float)</code>: water content (m3/m3)</li>
+<li><code>critical (float)</code>: critical water content, below which plant water stress occurs (m3/m3)</li>
+<li><code>sat (float)</code>: saturation point (m3/m3)</li>
+<li><code>fc (float)</code>: field capacity (m3/m3)</li>
+<li><code>pwp (float)</code>: permanent wilting point (m3/m3)</li>
+</ul>
+<h3 id="soilwater.RootWater.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">RootWater(self)
+</code></pre>
+
+<p>Create and initialize the RootWater object.</p>
+<h2 id="soilwater.SoilLayer">SoilLayer <em>class</em></h2>
+
+<p>Soil layer properties class.</p>
+<p>The physical properties of a soil layer, dealing with soil water content and fluxes.</p>
+<p><strong>CLASS ATTRIBUTES</strong></p>
+<ul>
+<li><code>flux_fields (list)</code>: list of flux names (str) to serve as dictionary keys which are
+                        <code>['t', 'e', 'influx', 'outflux', 'netflux']</code></li>
+</ul>
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>thick (float)</code>: Thickness of the soil layer (m)</li>
+<li><code>texture</code>: Sand, clay, and organic matter (%)</li>
+<li><code>vwc (float)</code>: Vol. water content (m3/m3)</li>
+<li><code>wc (float)</code>: Water content (mm)</li>
+<li><code>accthick (float)</code>: Cumulative thickness (m)</li>
+<li><code>depth (float)</code>: Depth of layer from soil surface (m)</li>
+<li><code>swc (SWC)</code>: Soil water characteristics (varying units)</li>
+<li><code>ksat (float)</code>: Saturated hydraulic conductivity (m/day)</li>
+<li><code>k (float)</code>: Hydraulic conductivity (m/day)</li>
+<li><code>matric (float)</code>: Matric head (m)</li>
+<li><code>gravity (float)</code>: Gravity head (m)</li>
+<li><code>fluxes (dict)</code>: Water flux components stored in a dictionary</li>
+</ul>
+<p>The keys for the dictionary <code>fluxes</code> are as follows</p>
+<pre><code class="text">    't': Plant water uptake via transpiration (m/day)
+    'e':  Loss of water via evaporation (m/day)
+    'influx': Water entry into layer (m/day)
+    'outflux': Water exit out of layer (m/day)
+    'netflux': Difference between influx and outflux (m/day)
+</code></pre>
+
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>initialize_layer</code>: Initialize all attributes</li>
+<li><code>update_heads_k</code>: Update the matric head, gravity head, and
+                    the unsaturated hydraulic conductivity</li>
+<li><code>tothead</code>: Total/sum of matric and gravity head (m) - <code>getter</code> method</li>
+</ul>
+<p><strong>Note</strong></p>
+<p>Volumetric water content (vwc) can be given as a negative value. Negative
+values are a special code to mean that the water content is a fraction
+between SAT and FC or between FC and PWP. The codes are along a scale
+from -3 to -1:</p>
+<pre><code class="text">    Scale:
+              -2.75      -2.25              -1.5
+        [-3 ....|..........|....-2 ...........|..........-1]
+         PWP                    FC                      SAT
+</code></pre>
+
+<p>so that if the given water content is -1, -2, or -3, it means the
+water content should be set to saturation, field capacity, or
+permanent wilting point, respectively. A value of -1.5 means the
+water content will be set at halfway between SAT and FC. Likewise,
+-2.25 and -2.75 mean the water content will be lower than FC, where
+the former (-2.25) means the water content will be set nearer to FC,
+but the latter (-2.75) closer to PWP.</p>
+<p>Any negative values outside the range of -3 to -1 means the water
+content wil be set at FC.</p>
+<h3 id="soilwater.SoilLayer.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">SoilLayer(self)
+</code></pre>
+
+<p>Create and initialize the SoilLayer object.</p>
+<h3 id="soilwater.SoilLayer.initialize_layer">initialize_layer</h3>
+
+<pre><code class="python">SoilLayer.initialize_layer(self, prevlayer, nextlayer)
+</code></pre>
+
+<p>Initialize all soil layer attributes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function will set the water content to be within the range of
+SAT and FC or between FC and PWP, if the volumetric water content
+is given as negative value. See this class's docstring above.</p>
+</div>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>prevlayer (<code>SoilLayer</code>)</strong>: previous soil layer (layer above current layer)</li>
+<li><strong>nextlayer (<code>SoilLayer</code>)</strong>: next soil layer (layer beneath current layer)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="soilwater.SoilLayer.update_heads_k">update_heads_k</h3>
+
+<pre><code class="python">SoilLayer.update_heads_k(self)
+</code></pre>
+
+<p>Update matric and gravity heads (m), and unsaturated hydraulic conductivity (m/day).</p>
+<p>Update is based on current soil water content.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="soilwater.SoilLayer.tothead">tothead</h3>
+
+<p>Total head (m) - <code>getter</code> method.</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: total head</p>
+<h2 id="soilwater.SoilWater">SoilWater <em>class</em></h2>
+
+<p>Soil water balance class.</p>
+<p>Model the soil water flow in one dimension and water balance. Include the effect
+of groundwater, if any, but assume constant water table depth.</p>
+<p><strong>EXTERNAL INFORMATION REQUIRED (MUST BE SUPPLIED FROM AN EXTERNAL CLASS)</strong></p>
+<pre><code class="text">    petcrop (float): Potential transpiration (from crop) (mm/day)
+    petsoil (float): Potential evaporation (fro soil) (mm/day)
+</code></pre>
+
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>numintervals (int)</code>: Number of intervals for integration within a day</li>
+<li><code>rootdepth (float)</code>: Rooting depth (m)</li>
+<li><code>has_watertable (bool)</code>: True if water table / groundwater is present, else False</li>
+<li><code>numlayers (int)</code>: Number of soil layers</li>
+<li><code>layers (list)</code>: List of SoilLayer objects (their numbers must match numlayers)</li>
+<li><code>rootwater (RootWater)</code>: Soil water characteristics in the root zone</li>
+<li><code>cf (list)</code>: List of dictionary of cumulative fluxes for every soil layer</li>
+<li><code>waterstresses (AET)</code>: Reduction to evaporation and transpiration due to water stress</li>
+<li><code>netrain (float)</code>: Net rainfall (mm/day)</li>
+<li><code>aet (AET)</code>: Actual water loss by evaporation and transpiration (mm/day)</li>
+</ul>
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>net_rainfall</code>: Net rainfall (mm/day)</li>
+<li><code>rooting_depth</code>: Increase in rooting depth (m)</li>
+<li><code>update_rootwater</code>: Update the water content and water characteristics in the rooting zone</li>
+<li><code>reduce_et</code>: Reduction in evaporation and transpiration (0-1, 1=no stress, 0=max. stress)</li>
+<li><code>actual_et</code>: Actual evaporation and transpiration (mm/day)</li>
+<li><code>influx_from_watertable</code>: Influx of water from the water table (m/day).</li>
+<li><code>calc_water_fluxes</code>: Calculate the various water fluxes (m/day) for all soil layers</li>
+<li><code>daily_water_balance</code>: Solve for the water content in each soil layer</li>
+<li><code>update</code>: Update the soil water properties by solving the water fluxes</li>
+</ul>
+<h3 id="soilwater.SoilWater.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">SoilWater(self, fname_in)
+</code></pre>
+
+<p>Create and initialize the SoilWater object.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>fname_in (str)</strong>: path and filename of the model initialization file</li>
+</ul>
+<h3 id="soilwater.SoilWater.net_rainfall">net_rainfall</h3>
+
+<pre><code class="python">SoilWater.net_rainfall(self)
+</code></pre>
+
+<p>Net rainfall (mm/day).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: net rainfall</p>
+<h3 id="soilwater.SoilWater.rooting_depth">rooting_depth</h3>
+
+<pre><code class="python">SoilWater.rooting_depth(self)
+</code></pre>
+
+<p>Increase in rooting depth (m).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: rooting depth</p>
+<h3 id="soilwater.SoilWater.update_rootwater">update_rootwater</h3>
+
+<pre><code class="python">SoilWater.update_rootwater(self)
+</code></pre>
+
+<p>Update the water content and water characteristics in the rooting zone.</p>
+<p>The <code>RootZone</code> object will be set here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Critical soil water content for plant water stress taken as 0.6 or 60%
+of the difference between soil saturation and permanent wilting point.</p>
+</div>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="soilwater.SoilWater.reduce_et">reduce_et</h3>
+
+<p>Reduction in evaporation and transpiration (0-1, 1=no stress, 0=max. stress).</p>
+<p><strong>Returns</strong></p>
+<p><code>AET</code>: <code>namedtuple</code> containing reduction in E and T (<code>float</code>)</p>
+<h3 id="soilwater.SoilWater.actual_et">actual_et</h3>
+
+<p>Actual evaporation and transpiration (mm/day).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>petcrop (float)</strong>: potential water loss from the crop (mm/day)</li>
+<li><strong>petsoil (float)</strong>: potential water loss from the soil (mm/day)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>AET</code>: <code>namedtuple</code> containing actual water loss from soil and crop (<code>float</code>)</p>
+<h3 id="soilwater.SoilWater.influx_from_watertable">influx_from_watertable</h3>
+
+<pre><code class="python">SoilWater.influx_from_watertable(self)
+</code></pre>
+
+<p>Influx of water from the water table (m/day).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: groundwater influx</p>
+<h3 id="soilwater.SoilWater.calc_water_fluxes">calc_water_fluxes</h3>
+
+<pre><code class="python">SoilWater.calc_water_fluxes(self, petcrop, petsoil, firstrun)
+</code></pre>
+
+<p>Calculate the various water fluxes (m/day) for all soil layers.</p>
+<p>Flux can either have a positive or negative sign</p>
+<pre><code class="text">    +ve flux - means downward flow
+    -ve flux - means upward flow (against gravity)
+</code></pre>
+
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>petcrop (float)</strong>: potential water loss from the crop (mm/day)</li>
+<li><strong>petsoil (float)</strong>: potential water loss from the soil (mm/day)</li>
+<li><strong>firstrun (bool)</strong>: set to <code>True</code> for first run, else <code>False</code>.
+                     <code>True</code> means the cumulative fluxes will be initialize with the first
+                     set of flux values. <code>False</code> will accumulate the flux values.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="soilwater.SoilWater.daily_water_balance">daily_water_balance</h3>
+
+<pre><code class="python">SoilWater.daily_water_balance(self, petcrop, petsoil)
+</code></pre>
+
+<p>Solve for the water content in each soil layer.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>petcrop (float)</strong>: potential water loss from the crop (mm/day)</li>
+<li><strong>petsoil (float)</strong>: potential water loss from the soil (mm/day)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="soilwater.SoilWater.update">update</h3>
+
+<pre><code class="python">SoilWater.update(self, external_info)
+</code></pre>
+
+<p>Update the soil water properties by solving the water fluxes.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>external_info (dict)</strong>: requires information on potential transpiration and evaporation</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../photosyn/index.html" class="btn btn-neutral float-right" title="Photosyn">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../crop/index.html" class="btn btn-neutral" title="Crop"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../crop/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../photosyn/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

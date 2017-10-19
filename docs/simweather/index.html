@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>SimWeather - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SimWeather";
+    var mkdocs_page_input_path = "simweather.md";
+    var mkdocs_page_url = "/simweather/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/index.html">Graph</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="index.html">SimWeather</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteostats/index.html">MeteoStats</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../crop/index.html">Crop</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../soilwater/index.html">SoilWater</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pysawit/index.html">PySawit</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Weather &raquo;</li>
+        
+      
+    
+    <li>SimWeather</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="simweather">simweather <em>module</em></h1>
+
+<p>SimWeather module.</p>
+<p>Simulates daily weather for min. and max. air temperature, wind speed, and rainfall.</p>
+<div class="admonition warning">
+<p class="admonition-title">Required installation</p>
+<ul>
+<li><a href="https://www.continuum.io/downloads">Anaconda</a> for <code>scipy</code> for statistics</li>
+</ul>
+</div>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="simweather.ParamRain">ParamRain <em>namedtuple</em></h2>
+
+<p><code>ParamRain(pww, pwd, shape, scale)</code></p>
+<p>namedtuple: Rain generation parameters
+<h3 id="simweather.ParamRain.pww">pww</h3></p>
+<p>float: probability of two consecutive wet days
+<h3 id="simweather.ParamRain.pwd">pwd</h3></p>
+<p>float: probability of a wet day, followed by a dry day
+<h3 id="simweather.ParamRain.shape">shape</h3></p>
+<p>float: shape factor of the gamma probability distribution
+<h3 id="simweather.ParamRain.scale">scale</h3></p>
+<p>float: scale factor of the gamma probability distribution
+<h2 id="simweather.ParamTemp">ParamTemp <em>namedtuple</em></h2></p>
+<p><code>ParamTemp(mean, amp, cv, ampcv, meanwet)</code></p>
+<p>namedtuple: Air temperature generation parameters
+<h3 id="simweather.ParamTemp.mean">mean</h3></p>
+<p>float: annual mean air temperature
+<h3 id="simweather.ParamTemp.amp">amp</h3></p>
+<p>float: amplitude (highest value - mean value) of air temperature
+<h3 id="simweather.ParamTemp.cv">cv</h3></p>
+<p>float: coefficient of variation of air temperature
+<h3 id="simweather.ParamTemp.ampcv">ampcv</h3></p>
+<p>float: amplitude (smallest value - mean value) of cv
+<h3 id="simweather.ParamTemp.meanwet">meanwet</h3></p>
+<p>float: mean air temperature on days that rained
+<h2 id="simweather.ParamWind">ParamWind <em>namedtuple</em></h2></p>
+<p><code>ParamWind(shape, scale)</code></p>
+<p>namedtuple: Wind generation parameters
+<h3 id="simweather.ParamWind.shape">shape</h3></p>
+<p>float: shape factor of the Weibull probability distribution
+<h3 id="simweather.ParamWind.scale">scale</h3></p>
+<p>float: scale factor of the Weibull probability distribution
+<h2 id="simweather.SimWeather">SimWeather <em>class</em></h2></p>
+<p>SimWeather class.</p>
+<p>Simulate daily weather for min. and max. air temperatures, wind speed, and rain.</p>
+<p><strong>CLASS ATTRIBUTES</strong></p>
+<ul>
+<li><code>cumulative_days (tuple)</code>: cumulative number of days for every month</li>
+</ul>
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>rnd</code>: Random number generator [0-1)</li>
+<li><code>generate_rain</code>: Daily rainfall amount (mm/day) based on a fitted inverse gamma CDF</li>
+<li><code>generate_temperature</code>: Daily max. and min. air temperatures (deg. C)</li>
+<li><code>generate_wind</code>: Mean daily wind speed (m/s) based on a fitted inverse Weibull distribution</li>
+<li><code>update</code>: Generate (simulate) a new set of daily weather for one year</li>
+</ul>
+<h3 id="simweather.SimWeather.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">SimWeather(self, infile, jsonformat=False)
+</code></pre>
+
+<p>Create and initialize the SimWeather object.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>infile (str/json)</strong>: path and filename of initialization text file
+                       or a JSON-formatted string</li>
+<li><strong>jsonformat (bool)</strong>: <code>False</code> if <code>infile</code> is a plain text file, or
+                       <code>True</code> if <code>infile</code> is a string in JSON format</li>
+</ul>
+<h3 id="simweather.SimWeather.rnd">rnd</h3>
+
+<pre><code class="python">SimWeather.rnd()
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>rnd</code> is a static method.</p>
+</div>
+<p>Generate a uniform random number between the interval [0 - 1).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: random value [0-1)</p>
+<h3 id="simweather.SimWeather.generate_rain">generate_rain</h3>
+
+<pre><code class="python">SimWeather.generate_rain(self)
+</code></pre>
+
+<p>Determine the daily rainfall amount (mm/day) based on a fitted inverse gamma CDF.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="simweather.SimWeather.generate_temperature">generate_temperature</h3>
+
+<pre><code class="python">SimWeather.generate_temperature(self)
+</code></pre>
+
+<p>Determine the daily max. and min. air temperatures (deg. C).</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="simweather.SimWeather.generate_wind">generate_wind</h3>
+
+<pre><code class="python">SimWeather.generate_wind(self)
+</code></pre>
+
+<p>Determine the mean daily wind speed (m/s) based on a fitted inverse Weibull distribution.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="simweather.SimWeather.update">update</h3>
+
+<pre><code class="python">SimWeather.update(self)
+</code></pre>
+
+<p>Generate (simulate) one year of daily weather.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../meteo/index.html" class="btn btn-neutral float-right" title="Meteo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../weatherfile/index.html" class="btn btn-neutral" title="WeatherFile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../weatherfile/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../meteo/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

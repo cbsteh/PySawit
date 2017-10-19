@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Crop - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Crop";
+    var mkdocs_page_input_path = "crop.md";
+    var mkdocs_page_url = "/crop/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/index.html">Graph</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simweather/index.html">SimWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteostats/index.html">MeteoStats</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Crop</a>
+    <ul class="subnav">
+            
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../soilwater/index.html">SoilWater</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pysawit/index.html">PySawit</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Crop</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="crop">crop <em>module</em></h1>
+
+<p>Crop growth and yield module.</p>
+<p>Model oil palm growth and yield.</p>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="crop.Contents">Contents <em>namedtuple</em></h2>
+
+<p><code>Contents(n, m)</code></p>
+<p>namedtuple: Nitrogen and minerals contents in a given plant part
+<h3 id="crop.Contents.n">n</h3></p>
+<p>float: N content
+<h3 id="crop.Contents.m">m</h3></p>
+<p>float: minerals content
+<h2 id="crop.Parts">Parts <em>namedtuple</em></h2></p>
+<p><code>Parts(pinnae, rachis, trunk, roots, maleflo, femaflo, bunches)</code></p>
+<p>namedtuple: Plant parts of the oil palm tree
+<h3 id="crop.Parts.pinnae">pinnae</h3></p>
+<p>(Part): pinnae part
+<h3 id="crop.Parts.rachis">rachis</h3></p>
+<p>(Part): rachis part
+<h3 id="crop.Parts.trunk">trunk</h3></p>
+<p>(Part): trunk part
+<h3 id="crop.Parts.roots">roots</h3></p>
+<p>(Part): roots parts
+<h3 id="crop.Parts.maleflo">maleflo</h3></p>
+<p>(Part): male flowers part
+<h3 id="crop.Parts.femaflo">femaflo</h3></p>
+<p>(Part): female flowers parts
+<h3 id="crop.Parts.bunches">bunches</h3></p>
+<p>(Part): bunches part
+<h2 id="crop.Part">Part <em>class</em></h2></p>
+<p>Class for individual plant parts (e.g., pinnae, rachis, trunk, etc.).</p>
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>content (Contents)</code>: N and mineral content (each stored as an <code>AFGen</code> object)</li>
+<li><code>maint (float)</code>: Assimilates used for maintenance (kg CH2O/palm/day)</li>
+<li><code>frac (float)</code>: DM (dry matter) partitioning (fraction)</li>
+<li><code>growth (float)</code>: Growth rate (kg DM/palm/day)</li>
+<li><code>death (float)</code>: Death rate (kg DM/palm/day)</li>
+<li><code>weight (float)</code>: Weight of the plant part (kg DM/palm)</li>
+</ul>
+<h3 id="crop.Part.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">Part(self)
+</code></pre>
+
+<p>Create and initialize the Part object.</p>
+<h2 id="crop.Crop">Crop <em>class</em></h2>
+
+<p>Crop class (oil palm growth and yield).</p>
+<p><strong>EXTERNAL INFORMATION REQUIRED (MUST BE SUPPLIED FROM AN EXTERNAL CLASS):</strong></p>
+<pre><code class="text">    assimilates (float): Total amount of assimilates from photosynthesis
+                         (kg CH2O/palm/day)
+    cropstress (float): Plant water stress level
+                        (0 = max. stress to 1 = no stress)
+</code></pre>
+
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>treeage (int)</code>: Age of the tree (days)</li>
+<li><code>plantdens (int)</code>: Planting density (palms/ha)</li>
+<li><code>thinplantdens (int)</code>: Thinning planting density (palms/ha)</li>
+<li><code>thinage (int)</code>: Thinning tree age (days)</li>
+<li><code>femaleprob (float)</code>: Probability of obtaining female flowers (fraction)</li>
+<li><code>parts (Parts)</code>: <code>Parts</code> namedtuple of the various plant parts</li>
+<li><code>slatable (AFGen)</code>: SLA table (age vs SLA)</li>
+<li><code>trunkhgt (float)</code>: Trunk height (m)</li>
+<li><code>treehgt  (float)</code>: Total tree height (m)</li>
+<li><code>vdmwgt (float)</code>: VDM (vegetative dry matter) weight (kg DM/palm)</li>
+<li><code>tdmwgt (float)</code>: Total DM weight (kg DM/palm)</li>
+<li><code>vdmmax (float)</code>: Maximum VDM requirement for the given planting density (kg DM/palm/year)</li>
+<li><code>laimax (float)</code>: Maximum LAI (leaf area index) (m2 leaf/m2 ground)</li>
+<li><code>sla (float)</code>: SLA (specific leaf area) (m2 leaf/kg leaf)</li>
+<li><code>lai (float)</code>: LAI (leaf area index) (m2 leaf/m2 ground)</li>
+<li><code>vdmreq (float)</code>: VDM demand for growth (kg DM/palm/day)</li>
+<li><code>assim4maint (float)</code>: Total maintenance (kg CH2O/palm/day)</li>
+<li><code>assim4growth (float)</code>: Assimilates for vegetative growth (kg CH2O/palm/day)</li>
+<li><code>assim4gen (float)</code>: Assimilates for generative growth (kg CH2O/palm/day)</li>
+<li><code>boxmaleflo (list)</code>: Boxcar for male flowers</li>
+<li><code>boxfemaflo (list)</code>: Boxcar for female flowers (immature bunches)</li>
+<li><code>boxbunches (list)</code>: Boxcar for mature bunches</li>
+<li><code>bunchyield (float)</code>: Yield (kg DM/palm/year)</li>
+<li><code>flowersex (int)</code>: Flower sex at the start of bunch/mature phase (0 = male/abort, 1 = female)</li>
+<li><code>newflowersex (int)</code>: Sex of new flower (0 = male/abort, 1 = female)</li>
+</ul>
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>tree_height</code>: Trunk and total tree height (canopy + trunk height) (m)</li>
+<li><code>dm_wgts</code>: Weight of vegetative parts and all parts (kg DM/palm)</li>
+<li><code>vdm_maximum</code>: Maximum VDM requirement for the given planting density (kg DM/palm/year)</li>
+<li><code>lai_maximum</code>: Maximum LAI for the given planting density (m2 leaf/m2 ground)</li>
+<li><code>lookup_sla_lai</code>: SLA-LAI lookup table</li>
+<li><code>maintenance_respiration</code>: Maintenance requirement for every plant part (kg CH2O/palm/day)</li>
+<li><code>vdm_requirement</code>: Calculate the required VDM for growth (kg DM/palm/YEAR)</li>
+<li><code>veg_partitioning</code>: DM partitioning for the various plant parts (fraction)</li>
+<li><code>cvf</code>: Convert weight in glucose, CH2O, to that in dry matter, DM (kg DM/kg CH2O)</li>
+<li><code>veg_growth_rates</code>: Growth rates for the various plant parts (kg DM/palm/day)</li>
+<li><code>veg_death_rates</code>: Death rates for the various plant parts (kg DM/palm/day)</li>
+<li><code>update_veg_weights</code>: Increment the various plant parts (kg DM/palm)</li>
+<li><code>new_flower_sex</code>: Determine the gender of the first (newest) flower in the "boxcar"</li>
+<li><code>gen_growth_rates</code>: Growth rates for generative organs (kg DM/palm/day)</li>
+<li><code>update_gen_weights</code>: Increment the weights for all generative organs (kg DM/palm)</li>
+<li><code>daily_growth</code>: Solve for the crop growth and yield</li>
+<li><code>doy_has_changed</code>: Day of year has changed, so update crop properties</li>
+<li><code>update</code>: Calls the <code>daily_growth()</code> method</li>
+</ul>
+<h3 id="crop.Crop.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">Crop(self, fname_in)
+</code></pre>
+
+<p>Create and initialize the Crop object.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>fname_in (str)</strong>: path and filename of the model initialization file</li>
+</ul>
+<h3 id="crop.Crop.tree_height">tree_height</h3>
+
+<pre><code class="python">Crop.tree_height(self, cropstress)
+</code></pre>
+
+<p>Trunk and total tree height (canopy + trunk height) (m).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>cropstress (float)</strong>: 0-1 plant water stress; 0 = max stress, 1 = no stress</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: trunk and total tree height (<code>float</code>)</p>
+<h3 id="crop.Crop.dm_wgts">dm_wgts</h3>
+
+<pre><code class="python">Crop.dm_wgts(self)
+</code></pre>
+
+<p>Weight of vegetative parts and all parts (kg DM/palm).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: VDM and TDM (<code>float</code>)</p>
+<h3 id="crop.Crop.vdm_maximum">vdm_maximum</h3>
+
+<pre><code class="python">Crop.vdm_maximum(self)
+</code></pre>
+
+<p>Maximum VDM requirement for the given planting density (kg DM/palm/year).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: max VDM</p>
+<h3 id="crop.Crop.lai_maximum">lai_maximum</h3>
+
+<pre><code class="python">Crop.lai_maximum(self)
+</code></pre>
+
+<p>Maximum LAI for the given planting density (m2 leaf/m2 ground).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: maximum LAI</p>
+<h3 id="crop.Crop.lookup_sla_lai">lookup_sla_lai</h3>
+
+<pre><code class="python">Crop.lookup_sla_lai(self)
+</code></pre>
+
+<p>SLA-LAI lookup table.</p>
+<p>Lookup from <code>AFGen</code> the current SLA (specific leaf area, m2 leaf/kg leaf)
+then calculate the LAI (m2 leaf/m2 ground).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: SLA and LAI (<code>float</code>)</p>
+<h3 id="crop.Crop.maintenance_respiration">maintenance_respiration</h3>
+
+<pre><code class="python">Crop.maintenance_respiration(self, assimilates)
+</code></pre>
+
+<p>Maintenance requirement for every plant part (kg CH2O/palm/day).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>assimilates (float)</strong>: amount of assimilates from photosynthesis (kg CH2O/palm/day)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: maintenance for every plant part (<code>float</code>)</p>
+<h3 id="crop.Crop.vdm_requirement">vdm_requirement</h3>
+
+<pre><code class="python">Crop.vdm_requirement(self)
+</code></pre>
+
+<p>Calculate the required VDM for growth (kg DM/palm/YEAR).</p>
+<p>VDM is per annual basis, so don't forget to divide by 365 to obtain
+the required VDM per DAY.</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: VDM</p>
+<h3 id="crop.Crop.veg_partitioning">veg_partitioning</h3>
+
+<pre><code class="python">Crop.veg_partitioning(self)
+</code></pre>
+
+<p>DM partitioning for the various plant parts (fraction).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: DM partitioning between all plant parts(float)</p>
+<h3 id="crop.Crop.cvf">cvf</h3>
+
+<pre><code class="python">Crop.cvf(self)
+</code></pre>
+
+<p>Convert weight in glucose, CH2O, to that in dry matter, DM (kg DM/kg CH2O).</p>
+<p><strong>Returns</strong></p>
+<p><code>float</code>: conversion factor</p>
+<h3 id="crop.Crop.veg_growth_rates">veg_growth_rates</h3>
+
+<pre><code class="python">Crop.veg_growth_rates(self)
+</code></pre>
+
+<p>Growth rates for the various plant parts (kg DM/palm/day).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: growth rates (float)</p>
+<h3 id="crop.Crop.veg_death_rates">veg_death_rates</h3>
+
+<pre><code class="python">Crop.veg_death_rates(self)
+</code></pre>
+
+<p>Death rates for the various plant parts (kg DM/palm/day).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: death rates (<code>float</code>)</p>
+<h3 id="crop.Crop.update_veg_weights">update_veg_weights</h3>
+
+<pre><code class="python">Crop.update_veg_weights(self, assimilates)
+</code></pre>
+
+<p>Increment the various plant parts (kg DM/palm).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>assimilates (float)</strong>: amount of assimilates from photosynthesis (kg CH2O/palm/day)</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="crop.Crop.new_flower_sex">new_flower_sex</h3>
+
+<pre><code class="python">Crop.new_flower_sex(self)
+</code></pre>
+
+<p>Determine the gender of the first (newest) flower in the "boxcar".</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: sex of flower (0 = male/abortl 1 = female)</p>
+<h3 id="crop.Crop.gen_growth_rates">gen_growth_rates</h3>
+
+<pre><code class="python">Crop.gen_growth_rates(self)
+</code></pre>
+
+<p>Growth rates for generative organs (kg DM/palm/day).</p>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: generative growth rates (<code>float</code>)</p>
+<h3 id="crop.Crop.update_gen_weights">update_gen_weights</h3>
+
+<pre><code class="python">Crop.update_gen_weights(self, cropstress)
+</code></pre>
+
+<p>Increment the weights for all generative organs (kg DM/palm).</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>cropstress (float)</strong>: 0-1 plant water stress; 0 = max stress, 1 = no stress</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="crop.Crop.daily_growth">daily_growth</h3>
+
+<pre><code class="python">Crop.daily_growth(self, assimilates, cropstress)
+</code></pre>
+
+<p>Solve for the crop growth and yield.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>assimilates (float)</strong>: amount of assimilates from photosynthesis (kg CH2O/palm/day)</li>
+<li><strong>cropstress (float)</strong>: 0-1 plant water stress; 0 = max stress, 1 = no stress</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="crop.Crop.doy_has_changed">doy_has_changed</h3>
+
+<pre><code class="python">Crop.doy_has_changed(self)
+</code></pre>
+
+<p>DOY has changed, so change the tree age.</p>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="crop.Crop.update">update</h3>
+
+<pre><code class="python">Crop.update(self, external_info)
+</code></pre>
+
+<p>Update the crop properties by calling the daily_growth method.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>external_info (dict)</strong>: requires information on the assimilates and crop stress level</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../soilwater/index.html" class="btn btn-neutral float-right" title="SoilWater">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../meteostats/index.html" class="btn btn-neutral" title="MeteoStats"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../meteostats/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../soilwater/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

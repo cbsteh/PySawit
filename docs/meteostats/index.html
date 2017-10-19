@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>MeteoStats - PySawit</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MeteoStats";
+    var mkdocs_page_input_path = "meteostats.md";
+    var mkdocs_page_url = "/meteostats/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> PySawit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utilities</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../utils/index.html">Utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/index.html">Graph</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Weather</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../annualweather/index.html">AnnualWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../weatherfile/index.html">WeatherFile</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simweather/index.html">SimWeather</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../meteo/index.html">Meteo</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="index.html">MeteoStats</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../crop/index.html">Crop</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../soilwater/index.html">SoilWater</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../photosyn/index.html">Photosyn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../energybal/index.html">EnergyBal</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Front-end</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../facade/index.html">Facade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pysawit/index.html">PySawit</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">PySawit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Weather &raquo;</li>
+        
+      
+    
+    <li>MeteoStats</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="meteostats">meteostats <em>module</em></h1>
+
+<p>Weather statistics module.</p>
+<p>Descriptive statistics of annual and monthly weather data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Required installation</p>
+<ul>
+<li><a href="https://www.continuum.io/downloads">Anaconda</a> for <code>scipy</code> for statistics</li>
+</ul>
+</div>
+<p><strong>Author - Christopher Teh Boon Sung</strong></p>
+<hr />
+<h2 id="meteostats.MeteoStats">MeteoStats <em>class</em></h2>
+
+<p>Descriptive statistics of annual and monthly weather data.</p>
+<p>Calculate several basic descriptive statistics on the weather parameters:</p>
+<pre><code class="text">    count
+    total
+    minimum
+    maximum
+    average
+    amplitude
+    standard deviation
+    cv (coeff. of variation)
+</code></pre>
+
+<p>The rain parameter has additional statistics:</p>
+<pre><code class="text">    no. of wet and dry days
+</code></pre>
+
+<p>and the probability of having:</p>
+<pre><code class="text">    two consecutive dry days P(D|D),
+    two consecutive wet days P(W|W),
+    a dry day, then a wet day P(W|D),
+    a wet day, then a dry day P(D|W),
+    a dry day P(D)
+    a wet day P(W)
+</code></pre>
+
+<p>This class also fits a gamma probabilty distribution function to the rainfall data, and
+returns the shape and scale of the rainfall distribution. Likewise, this class also fits
+the Weibull probability distribution function to the windspeed data, and returns the
+Weibull shape and scale factors for the windspeed distribution.</p>
+<p><strong>ATTRIBUTES</strong></p>
+<ul>
+<li><code>metdata (list)</code>: Annual weather data (list of <code>OrderedDict</code> objects)</li>
+<li><code>statdict (list)</code>: 3-D dictionary that hold the results of the statistical values
+                     (list of <code>OrderedDict</code> objects).</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="python">statdict[month][param][stat] = value
+</code></pre>
+
+<p>thus,</p>
+<pre><code class="python">statdict[2]['wind']['avg']
+</code></pre>
+
+<p>returns the average (<code>avg</code>) wind speed (<code>wind</code>) for <code>month</code> = 2.
+Use the <code>collect()</code> method to retrieve all statistical values for a given
+condition. See the <code>collect()</code> method docmentation on how to use it.</p>
+<p><strong>METHODS</strong></p>
+<ul>
+<li><code>slice</code>: Extract a given month's weather data</li>
+<li><code>collect</code>: Create a list that contain all statistical values for a given month,
+             parameter, or statistic</li>
+<li><code>output_stats</code>: Print the weather data and their descriptive statistics to file
+                  (can append data and descriptive statistics to file).</li>
+<li><code>annual_weather</code>: Return the daily weather for the entire current year</li>
+</ul>
+<h3 id="meteostats.MeteoStats.__init__"><em>Constructor</em> __init__</h3>
+
+<pre><code class="python">MeteoStats(self, met)
+</code></pre>
+
+<p>Create and initialize the MeteoStats object.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>met (Meteo)</strong>: the Meteo object</li>
+</ul>
+<h3 id="meteostats.MeteoStats.slice">slice</h3>
+
+<pre><code class="python">MeteoStats.slice(month)
+</code></pre>
+
+<p>Return the start and end positions in the weather data list for a given month.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>month (int)</strong>: 0 to 11 for Jan to Dec, and 12 for whole year</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>tuple</code>: start and end positions (<code>int</code>)</p>
+<h3 id="meteostats.MeteoStats.collect">collect</h3>
+
+<pre><code class="python">MeteoStats.collect(self, find_month=None, find_param=None, find_stat=None)
+</code></pre>
+
+<p>Collect all values for a given/specified condition.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>find_month (int/None)</strong>: month number</li>
+<li><strong>find_param (str/None)</strong>: name of the weather parameter</li>
+<li><strong>find_stat (str/None)</strong>: name of the statistic</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>month</code> list is an zero-based index, so this means
+<code>month</code>=0 is Jan, <code>month</code>=1 is Feb.,..., <code>month</code>=11 is Dec, and
+<code>month</code>=12 is for the whole year.</p>
+</div>
+<p><strong>Returns</strong></p>
+<p><code>list</code>: a list of values, depending on the following example</p>
+<p><strong>Example</strong></p>
+<pre><code class="text">Specified                   Returns (as a list)
+------------------------------------------------------------------------------
+parameter and statistic     all monthly values
+  e.g.,
+  find_param = 'tmin'         returns every month's average (find_stat='avg')
+  find_stat = 'avg'           min. air temperature (find_param='tmin')
+
+month and parameter         all statistical values
+  e.g.,
+  find_month = 1              returns all the statistical values for max.
+  find_param = 'tmax'         air temperature (find_param='tmax') for Feb.
+                              (note: zero-based index, so, find_month=1 is Feb.).
+
+                              Statistics related to max. air temperature are:
+                              count, total, min., max., avg, amp, and cv (those
+                              returned by function _basic_stats), but for
+                              find_param='rain', the statistics related to rain
+                              are those returned by functions _basic_stats and
+                              _rain_stats (i.e., rain has more statistics than
+                              max. air temperature).
+
+month and stat              all parameter values
+  e.g.,
+  find_month = 3              returns the minimum (find_stat='min') values for
+  find_stat = 'min'           all of April's (find_month=3) parameters,
+                              such as: 'tmin', 'tmax', 'wind', and 'rain'.
+</code></pre>
+
+<p><strong>Raises</strong></p>
+<ul>
+<li><code>ValueError</code>: raised when the no. of arguments passed into this function is not two</li>
+</ul>
+<h3 id="meteostats.MeteoStats.output_stats">output_stats</h3>
+
+<pre><code class="python">MeteoStats.output_stats(self, fname, append_to_file=False)
+</code></pre>
+
+<p>Write to file the annual weather data for all years and their statistics.</p>
+<p>Also writes to file the raw statistics for every month and year. The name
+'-raw' is appended to the fileame of the output txt file.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>fname (str)</strong>: path and name of output text file</li>
+<li><strong>append_to_file (bool)</strong>: <code>False</code> (default) to create a new output file, else
+                           <code>True</code> to append output to an exisiting file</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>None</code>:</p>
+<h3 id="meteostats.MeteoStats.annual_weather">annual_weather</h3>
+
+<pre><code class="python">MeteoStats.annual_weather(self)
+</code></pre>
+
+<p>Return the entire daily weather data set for the current year.</p>
+<p><strong>Returns</strong></p>
+<p><code>OrderedDict</code>: annual daily weather</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../crop/index.html" class="btn btn-neutral float-right" title="Crop">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../meteo/index.html" class="btn btn-neutral" title="Meteo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../meteo/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../crop/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
