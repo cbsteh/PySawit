@@ -1,6 +1,6 @@
 # PySawit v. 0.0.1
 
-Oil Palm Growth and Yield Model
+Oil Palm Growth and Yield Model 2
 
 by [Christopher Teh Boon Sung](http://www.christopherteh.com)
 
