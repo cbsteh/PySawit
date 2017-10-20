@@ -26,7 +26,7 @@ to download and install the PySawit.
 
 ## How to use
 
-Call Python on [`pysawit.py`](pysawit.py). See this file's documentation on the commandline flags or options.
+Call Python on [`pysawit.py`](http://christopherteh.com/pysawit/pysawit/index.html). See this file's documentation on the commandline flags or options.
 
 ## Citation
 
