@@ -22,6 +22,8 @@ At the moment, PySawit simulates crop production level 2, where oil palm is limi
 1. Then, at your system's command line or prompt, type: `pip install pysawit`
 to download and install the PySawit.
 
+1. If you want the Excel user-interface to PySawit and the example files, just download the files from the `examples` folder. Or download the entire [`PySawit`](https://github.com/cbsteh/PySawit/archive/master.zip) repository
+
 1. You may also want to download and install [`Graphviz`](http://www.graphviz.org/Download.php) if you are planning to use PySawit's tracing feature to plot out a map of the program flow. Ensure you read the [`Graphviz`](http://www.graphviz.org/Download.php) website on how to set up the environment variable to recognize the location of graphviz files.
 
 ## How to use
