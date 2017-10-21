@@ -15,6 +15,8 @@ PySawit is a model, written in Python language, to simulate the growth and yield
 
 At the moment, PySawit simulates crop production level 2, where oil palm is limited only by meteorological and soil water availability. Nutrients, pests, diseases, weeds, and other field practices are assumed to be optimally managed.
 
+Read the [`brief report on PySawit.`](https://github.com/cbsteh/PySawit/blob/master/docs/pysawit.pdf)
+
 ## Installation
 
 1. To simplify the installation process, download the [`Anaconda`](https://www.anaconda.com/download/) suite. **Make sure you only choose the Python version 3.5 or higher (NOT ver 2.7).** Downloading the [`Anaconda`](https://www.anaconda.com/download/) suite will include not only the Python interpreter but also the `matplotlib`, `numpy`, and `xlwings` modules which are required by PySawit.
