@@ -29,7 +29,6 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Button
 import numpy as np
 import progressbar
-import xlwings
 
 import graph
 import meteostats
@@ -868,7 +867,8 @@ class Facade(object):
         """
         # open line of communication with Excel using xlwings
         if platform.system() == 'Windows':  # works only in Windows
-            msg = 'Exporting results to Excel workbook "{0}" ... '.format(xl_fname)
+           import xlwings
+           msg = 'Exporting results to Excel workbook "{0}" ... '.format(xl_fname)
             print(msg, flush=True, end='')
             wb = xlwings.Book(xl_fname)  # open and connect to the Excel file
             macro = wb.macro(xl_macroname)

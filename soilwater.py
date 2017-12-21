@@ -210,7 +210,7 @@ class SoilLayer(object):
         # 2d. store calculated soil water characteristics (assume porosity = saturation)
         self.swc = SWC(theta0, theta33, theta1500, psd, theta0, aire)
         # 3. saturated hydraulic conductivity (m/day):
-        self.ksat = 864 * 0.07 * (theta0 - (1 - (aire / 33) ** psd)) ** 4
+        self.ksat = 864 * 0.07 * (theta0 * (1 - (aire / 33) ** psd)) ** 4
 
         # 4. check for special code:
         if self.vwc < 0:
