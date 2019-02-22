@@ -36,4 +36,4 @@ Call Python on [`pysawit.py`](http://christopherteh.com/pysawit/pysawit/index.ht
 
 Preliminary work of PySawit was progressively published in several conference proceedings, but the full or complete work of PySawit was first published in:
 
-`TEH, C.B.S., & CHEAH, S.S. (2017). Modelling crop growth and yield in palm oil cultivation. In Rival, A. (Ed.) Achieving sustainable cultivation of oil palm. Cambridge, UK: Burleigh Dodds Science Publishing (In Press).`
+`Teh, C. B. S., & Cheah, S. S. (2018). Modelling crop growth and yield in palm oil cultivation. In A. Rival (Ed.), Achieving sustainable cultivation of oil palm (Vol. 1, pp. 183-227). Cambridge, UK: Burleigh Dodds Science Publishing.`
