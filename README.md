@@ -1,4 +1,4 @@
-# NOTE: This repo is archived, in view of a much improved version.
+# NOTE: This repo will soon be archived, in view of a much improved version.
 
 # PySawit v. 0.0.1 (README)
 
