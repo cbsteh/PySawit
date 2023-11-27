@@ -1,3 +1,5 @@
+# NOTE: This repo is archived, in view of a much improved version.
+
 # PySawit v. 0.0.1 (README)
 
 Oil Palm Growth and Yield Model
