@@ -1,4 +1,6 @@
-# PySawit v. 0.0.1 (README) OPEN COURSEWARE
+# PySawit v. 0.0.1 (ARCHIVED)
+
+Update (June 2, 2024): PySawit has been replaced by [Sawit.jl](https://github.com/cbsteh/Sawit.jl), which is much improved and faster, and has been validated against more sites.
 
 Oil Palm Growth and Yield Model
 
